@@ -13,7 +13,7 @@ final class MKResourceTests: XCTestCase {
     
     func testLoadImage() {
         let bundle = Bundle(for: MKResourceTests.self)
-        let image: UIImage? = Resource(fileName: "index").load(bundle: bundle)
+        let image: UIImage? = Resource(fileName: "index", fileExtension: "png").load(bundle: bundle)
         XCTAssertNotNil(image)
     }
     
