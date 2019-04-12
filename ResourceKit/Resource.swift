@@ -13,4 +13,3 @@ public struct Resource<T: SupportedResourceType>: Resourcable {
     public var fileName: String
     public var fileExtension: String
 }
-

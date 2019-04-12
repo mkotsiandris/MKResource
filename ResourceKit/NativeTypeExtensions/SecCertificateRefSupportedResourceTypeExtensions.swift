@@ -8,5 +8,4 @@
 
 import Foundation
 
-extension SecCertificate : SupportedResourceType {}
-
+extension SecCertificate: SupportedResourceType {}

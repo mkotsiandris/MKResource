@@ -8,4 +8,4 @@
 
 import Foundation
 
-extension String : SupportedResourceType {}
+extension String: SupportedResourceType {}

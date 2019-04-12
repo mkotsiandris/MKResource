@@ -8,4 +8,4 @@
 
 import UIKit
 
-extension UIImage : SupportedResourceType {}
+extension UIImage: SupportedResourceType {}
