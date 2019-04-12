@@ -9,26 +9,31 @@
 import XCTest
 @testable import MKResource
 
-class MKResourceTests: XCTestCase {
+final class MKResourceTests: XCTestCase {
+    
+    func testLoadImage() {
+        let bundle = Bundle(for: MKResourceTests.self)
+        let image: UIImage? = Resource(fileName: "index").load(bundle: bundle)
+        XCTAssertNotNil(image)
+    }
+    
+    func testLoadJSON() {
+        let bundle = Bundle(for: MKResourceTests.self)
+        let people: People? = Resource(fileName: "Person", fileExtension: "json").load(bundle: bundle)
+        XCTAssertNotNil(people)
+    }
+    
+    func testFoo() {}
+}
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+fileprivate extension MKResourceTests {
+    struct People: Codable, SupportedResourceType {
+        let person:[PersonCodable]
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    struct PersonCodable:Codable {
+        let name:String
+        let age:String
+        let employed:String
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
