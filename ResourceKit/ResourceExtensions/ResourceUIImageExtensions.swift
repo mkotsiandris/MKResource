@@ -1,12 +1,12 @@
 //
 //  Resource+UIImage.swift
-//  MKResource
+//  ResourceKit
 //
 //  Created by Marios Kotsiandris on 12/04/2019.
 //  Copyright © 2019 Marios Kotsiandris. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public extension Resource where T == UIImage {
     init(fileName: String, fileExtension: String = "png") {

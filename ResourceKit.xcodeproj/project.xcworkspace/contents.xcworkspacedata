@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:MKResource.xcodeproj">
+      location = "self:/Users/kotsiama/Projects/Training/personal/MKResource/ResourceKit.xcodeproj">
    </FileRef>
 </Workspace>

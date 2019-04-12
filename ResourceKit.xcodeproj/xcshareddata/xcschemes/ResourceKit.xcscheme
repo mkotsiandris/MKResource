@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6BC5C070225FDC4E0055170F"
-               BuildableName = "MKResource.framework"
-               BlueprintName = "MKResource"
-               ReferencedContainer = "container:MKResource.xcodeproj">
+               BuildableName = "ResourceKit.framework"
+               BlueprintName = "ResourceKit"
+               ReferencedContainer = "container:ResourceKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6BC5C079225FDC4E0055170F"
-               BuildableName = "MKResourceTests.xctest"
-               BlueprintName = "MKResourceTests"
-               ReferencedContainer = "container:MKResource.xcodeproj">
+               BuildableName = "ResourceKitTests.xctest"
+               BlueprintName = "ResourceKitTests"
+               ReferencedContainer = "container:ResourceKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6BC5C070225FDC4E0055170F"
-            BuildableName = "MKResource.framework"
-            BlueprintName = "MKResource"
-            ReferencedContainer = "container:MKResource.xcodeproj">
+            BuildableName = "ResourceKit.framework"
+            BlueprintName = "ResourceKit"
+            ReferencedContainer = "container:ResourceKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -65,9 +65,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6BC5C070225FDC4E0055170F"
-            BuildableName = "MKResource.framework"
-            BlueprintName = "MKResource"
-            ReferencedContainer = "container:MKResource.xcodeproj">
+            BuildableName = "ResourceKit.framework"
+            BlueprintName = "ResourceKit"
+            ReferencedContainer = "container:ResourceKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -83,9 +83,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6BC5C070225FDC4E0055170F"
-            BuildableName = "MKResource.framework"
-            BlueprintName = "MKResource"
-            ReferencedContainer = "container:MKResource.xcodeproj">
+            BuildableName = "ResourceKit.framework"
+            BlueprintName = "ResourceKit"
+            ReferencedContainer = "container:ResourceKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
