@@ -8,17 +8,17 @@
 
 import Foundation
 
+public extension Resource where ResourceType == String {
+    init(fileName: String) {
+        self.init(fileName: fileName, fileExtension: nil)
+    }
+}
+
 public extension Resourcable where ResourceType == String {
     func load(bundle: Bundle = Bundle.main) -> String? {
         guard let data: Data = Resource(fileName: fileName, fileExtension: nil).load(bundle: bundle) else {
             return nil
         }
         return String(data: data, encoding: .utf8)
-    }
-}
-
-public extension Resource where ResourceType == String {
-    init(fileName: String) {
-        self.init(fileName: fileName, fileExtension: nil)
     }
 }

@@ -24,7 +24,10 @@
 		0D9E11AF2260C96D00FE5ED6 /* UIImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9E11AE2260C96D00FE5ED6 /* UIImageTests.swift */; };
 		6B09B6DD22600B8500AD2424 /* index.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BC5C08E225FDCD00055170F /* index.png */; };
 		6B09B6E022600F3500AD2424 /* Person.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B09B6DF22600F3500AD2424 /* Person.json */; };
-		6B09B6E52261EE8000AD2424 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B09B6E42261EE8000AD2424 /* File.swift */; };
+		6B09B6E52261EE8000AD2424 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B09B6E42261EE8000AD2424 /* StringExtensions.swift */; };
+		6B34F2762263423B00640CF7 /* UINibSupportedResourceTypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B34F2752263423B00640CF7 /* UINibSupportedResourceTypeExtensions.swift */; };
+		6B34F278226342BD00640CF7 /* ResourceUINibExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B34F277226342BD00640CF7 /* ResourceUINibExtensions.swift */; };
+		6B34F27A226344ED00640CF7 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B34F279226344ED00640CF7 /* NibLoadable.swift */; };
 		6BC5C07B225FDC4E0055170F /* ResourceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC5C071225FDC4E0055170F /* ResourceKit.framework */; };
 		6BC5C082225FDC4E0055170F /* ResourceKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BC5C074225FDC4E0055170F /* ResourceKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6BC5C08C225FDC5E0055170F /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC5C08B225FDC5E0055170F /* Resource.swift */; };
@@ -57,7 +60,10 @@
 		0D9E11AB2260C8A500FE5ED6 /* CodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableTests.swift; sourceTree = "<group>"; };
 		0D9E11AE2260C96D00FE5ED6 /* UIImageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageTests.swift; sourceTree = "<group>"; };
 		6B09B6DF22600F3500AD2424 /* Person.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Person.json; sourceTree = "<group>"; };
-		6B09B6E42261EE8000AD2424 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		6B09B6E42261EE8000AD2424 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		6B34F2752263423B00640CF7 /* UINibSupportedResourceTypeExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINibSupportedResourceTypeExtensions.swift; sourceTree = "<group>"; };
+		6B34F277226342BD00640CF7 /* ResourceUINibExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceUINibExtensions.swift; sourceTree = "<group>"; };
+		6B34F279226344ED00640CF7 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		6BC5C071225FDC4E0055170F /* ResourceKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResourceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BC5C074225FDC4E0055170F /* ResourceKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResourceKit.h; sourceTree = "<group>"; };
 		6BC5C075225FDC4E0055170F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -93,6 +99,7 @@
 				0D9E118A2260A96F00FE5ED6 /* DataSupportedResourceTypeExtensions.swift */,
 				0D9E119B2260C25B00FE5ED6 /* SecCertificateRefSupportedResourceTypeExtensions.swift */,
 				0D9E119F2260C46E00FE5ED6 /* StringSupportedResourceTypeExtensions.swift */,
+				6B34F2752263423B00640CF7 /* UINibSupportedResourceTypeExtensions.swift */,
 			);
 			path = NativeTypeExtensions;
 			sourceTree = "<group>";
@@ -105,6 +112,7 @@
 				0D9E11922260AA1000FE5ED6 /* ResourceCodableExtensions.swift */,
 				0D9E119D2260C29C00FE5ED6 /* ResourceSecCertificateExtensions.swift */,
 				0D9E11A12260C49000FE5ED6 /* ResourceStringExtensions.swift */,
+				6B34F277226342BD00640CF7 /* ResourceUINibExtensions.swift */,
 			);
 			path = ResourceExtensions;
 			sourceTree = "<group>";
@@ -163,7 +171,8 @@
 		6B09B6E32261EE7100AD2424 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				6B09B6E42261EE8000AD2424 /* File.swift */,
+				6B09B6E42261EE8000AD2424 /* StringExtensions.swift */,
+				6B34F279226344ED00640CF7 /* NibLoadable.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -354,11 +363,14 @@
 				0D9E11A02260C46E00FE5ED6 /* StringSupportedResourceTypeExtensions.swift in Sources */,
 				0D9E11A22260C49000FE5ED6 /* ResourceStringExtensions.swift in Sources */,
 				0D9E119E2260C29C00FE5ED6 /* ResourceSecCertificateExtensions.swift in Sources */,
+				6B34F2762263423B00640CF7 /* UINibSupportedResourceTypeExtensions.swift in Sources */,
 				6BC5C08C225FDC5E0055170F /* Resource.swift in Sources */,
 				0D9E11852260A81300FE5ED6 /* Resourcable.swift in Sources */,
+				6B34F27A226344ED00640CF7 /* NibLoadable.swift in Sources */,
 				0D9E11932260AA1000FE5ED6 /* ResourceCodableExtensions.swift in Sources */,
 				0D9E11872260A90E00FE5ED6 /* SupportedResourceType.swift in Sources */,
-				6B09B6E52261EE8000AD2424 /* File.swift in Sources */,
+				6B34F278226342BD00640CF7 /* ResourceUINibExtensions.swift in Sources */,
+				6B09B6E52261EE8000AD2424 /* StringExtensions.swift in Sources */,
 				0D9E118E2260A9A000FE5ED6 /* ResourceUIImageExtensions.swift in Sources */,
 				0D9E11902260A9EE00FE5ED6 /* ResourceDataExtensions.swift in Sources */,
 			);
