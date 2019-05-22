@@ -1,0 +1,19 @@
+{
+    "people": [
+        {
+            "name": "Bob",
+            "age": 22,
+            "coming": false
+        },
+        {
+            "name": "Vinny",
+            "age": 21,
+            "coming": true
+        },
+        {
+            "name": "Teo",
+            "age": 23,
+            "coming": true
+        }
+    ]
+}

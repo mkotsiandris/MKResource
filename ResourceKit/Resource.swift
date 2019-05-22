@@ -12,4 +12,9 @@ public struct Resource<T: SupportedResourceType>: Resourcable {
     public typealias ResourceType = T
     public var fileName: String
     public var fileExtension: String?
+
+    public init(fileName: String, fileExtension: String?) {
+        self.fileName = fileName
+        self.fileExtension = fileExtension
+    }
 }
