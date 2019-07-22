@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = "ResourceKit"
-  spec.version = "0.2"
+  spec.version = "0.2.2"
   spec.summary = "Framework for easily loading resources into a project"
   spec.homepage = "https://github.com/mkotsiandris/ResourceKit"
   spec.license = { type: 'MIT', file: 'LICENSE.md' }
