@@ -14,7 +14,8 @@ final class StringResourceTests: XCTestCase {
     func testLoad_loadsResourcesProperly() {
         let expectedString = "This is a text for test!"
         let bundle = Bundle(for: StringResourceTests.self)
-        let actualString: String? = Resource(fileName: "StringTestsResourceFile", fileExtension: "").load(bundle: bundle)
+        let actualString: String? = Resource(fileName: "StringTestsResourceFile", fileExtension: "")
+            .load(bundle: bundle)
         XCTAssertNotNil(actualString)
         XCTAssertEqual(expectedString, actualString)
     }
