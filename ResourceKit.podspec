@@ -10,6 +10,6 @@ Pod::Spec.new do |spec|
   spec.swift_version = '5.0'
   spec.platform = :ios, "12.0"
   spec.requires_arc = true
-  spec.source = { git: "https://github.com/mkotsiandris/ResourceKit.git", tag: "v#{spec.version}", submodules: true }
+  spec.source = { git: "https://github.com/mkotsiandris/ResourceKit.git", tag: "#{spec.version}", submodules: true }
   spec.source_files = "ResourceKit/**/*.{h,swift}"
 end
