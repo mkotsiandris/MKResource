@@ -13,8 +13,8 @@ final class StringResourceTests: XCTestCase {
 
     func testLoad_loadsResourcesProperly() {
         let expectedString = "This is a text for test!"
-        let bundle = Bundle(for: StringResourceTests.self)
-        let actualString: String? = Resource(fileName: "StringTestsResourceFile").load(bundle: bundle)
+        let bundle = StringResourceTests.resourceBundle()
+        let actualString: String? = Resource(fileName: "StringTestsResourceFile").load(bundle: bundle!)
         XCTAssertNotNil(actualString)
         XCTAssertEqual(expectedString, actualString)
     }
@@ -22,4 +22,13 @@ final class StringResourceTests: XCTestCase {
     static var allTests = [
         ("testLoad_loadsResourcesProperly", testLoad_loadsResourcesProperly),
     ]
+}
+
+private extension StringResourceTests {
+    static func resourceBundle() -> Bundle? {
+        let thisSourceFile = URL(fileURLWithPath: #file)
+        let thisDirectory = thisSourceFile.deletingLastPathComponent()
+        let resourceDirectory = thisDirectory.appendingPathComponent("Resources")
+        return Bundle(url: resourceDirectory)
+    }
 }

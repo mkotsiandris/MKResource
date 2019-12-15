@@ -9,10 +9,10 @@
 import XCTest
 @testable import Rsrc
 
-class CodableTests: XCTestCase {
+final class CodableTests: XCTestCase {
     func testLoadJSON() {
-        let bundle = Bundle(for: CodableTests.self)
-        let people: People? = Resource(fileName: "Person", fileExtension: "json").load(bundle: bundle)
+        let bundle = CodableTests.resourceBundle()
+        let people: People? = Resource(fileName: "Person", fileExtension: "json").load(bundle: bundle!)
         XCTAssertNotNil(people)
     }
     
@@ -30,5 +30,14 @@ private extension CodableTests {
         let name: String
         let age: String
         let employed: String
+    }
+}
+
+private extension CodableTests {
+    static func resourceBundle() -> Bundle? {
+        let thisSourceFile = URL(fileURLWithPath: #file)
+        let thisDirectory = thisSourceFile.deletingLastPathComponent()
+        let resourceDirectory = thisDirectory.appendingPathComponent("Resources")
+        return Bundle(url: resourceDirectory)
     }
 }

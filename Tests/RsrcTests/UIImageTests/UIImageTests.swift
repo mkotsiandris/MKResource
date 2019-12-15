@@ -15,17 +15,17 @@ import UIKit
 final class UIImageTests: XCTestCase {
 
     func testLoadImage() {
-        let bundle = Bundle.init(for: UIImageTests.self)
+        let bundle = UIImageTests.resourceBundle()
         let expectedImage = UIImage(named: "index.png", in: bundle, compatibleWith: nil)
-        let actualImage: UIImage? = Resource(fileName: "index", fileExtension: "png").load(bundle: bundle)
+        let actualImage: UIImage? = Resource(fileName: "index", fileExtension: "png").load(bundle: bundle!)
         XCTAssertNotNil(expectedImage)
         XCTAssertEqual(expectedImage, actualImage)
     }
 
     func testLoadImage_withNoExtensionSpecified() {
-        let bundle = Bundle(for: UIImageTests.self)
+        let bundle = UIImageTests.resourceBundle()
         let expectedImage = UIImage(named: "index.png", in: bundle, compatibleWith: nil)
-        let actualImage: UIImage? = Resource(fileName: "index.png").load(bundle: bundle)
+        let actualImage: UIImage? = Resource(fileName: "index.png").load(bundle: bundle!)
         XCTAssertNotNil(expectedImage)
         XCTAssertEqual(expectedImage, actualImage)
     }
@@ -34,5 +34,14 @@ final class UIImageTests: XCTestCase {
         ("testLoadImage", testLoadImage),
         ("testLoadImage_withNoExtensionSpecified", testLoadImage_withNoExtensionSpecified),
     ]
+}
+
+private extension UIImageTests {
+    static func resourceBundle() -> Bundle? {
+        let thisSourceFile = URL(fileURLWithPath: #file)
+        let thisDirectory = thisSourceFile.deletingLastPathComponent()
+        let resourceDirectory = thisDirectory.appendingPathComponent("Resources")
+        return Bundle(url: resourceDirectory)
+    }
 }
 #endif
