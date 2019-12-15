@@ -6,6 +6,7 @@
 //  Copyright © 2019 Marios Kotsiandris. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 public protocol NibLoadable {
@@ -17,3 +18,4 @@ public extension NibLoadable where Self: UIViewController {
         return "\(self)"
     }
 }
+#endif
